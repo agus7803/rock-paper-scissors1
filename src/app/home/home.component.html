@@ -1,0 +1,31 @@
+<div class="row mt-4">
+  <div class="col-lg-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="titulo">Enter Player's names</h5>
+        <form [formGroup]="form" (ngSubmit)="guardarUsuario()">
+          <div class="input-group input-group-lg mb-3">
+            <div class="text">
+              <h6>Player 1:</h6>
+            </div>
+            <div class="input">
+              <input formControlName="name1" type="text" class="form-control" placeholder="name" required>
+            </div>
+          </div>
+          <div class="input-group input-group-lg mb-3">
+            <div class="text">
+              <h6>Player 1:</h6>
+            </div>
+            <div class="input">
+              <input formControlName="name2" type="text" class="form-control" placeholder="name">
+            </div>
+          </div>
+          <div class="d-grid gap-2">
+            <button [disabled]="this.form.invalid" [routerLink]="['/round']" type="submit" class="btn btn-success btn-lg">Start</button>
+          </div>
+        </form>
+          {{form.value | json}}
+      </div>
+      </div>
+    </div>
+  </div>
